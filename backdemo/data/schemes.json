@@ -1,0 +1,46 @@
+[
+  {
+    "name": "PM-KISAN",
+    "eligibility": {
+      "income": 100000,
+      "occupation": "farmer"
+    },
+    "sdg": ["No Poverty", "Zero Hunger"]
+  },
+  {
+    "name": "Ujjwala Yojana",
+    "eligibility": {
+      "income": 200000,
+      "gender": "female"
+    },
+    "sdg": ["Clean Energy", "Gender Equality"]
+  },
+  {
+    "name": "Beti Bachao Beti Padhao",
+    "eligibility": {
+      "gender": "female"
+    },
+    "sdg": ["Gender Equality", "Quality Education"]
+  },
+  {
+    "name": "Kisan Credit Card",
+    "eligibility": {
+      "occupation": "farmer"
+    },
+    "sdg": ["No Poverty", "Economic Growth"]
+  },
+  {
+    "name": "Soil Health Card",
+    "eligibility": {
+      "occupation": "farmer"
+    },
+    "sdg": ["Responsible Consumption", "Climate Action"]
+  },
+  {
+    "name": "Sukanya Samriddhi Yojana",
+    "eligibility": {
+      "gender": "female"
+    },
+    "sdg": ["Gender Equality", "Reduced Inequalities"]
+  }
+]
