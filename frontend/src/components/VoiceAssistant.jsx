@@ -89,7 +89,7 @@ const VoiceAssistant = ({ onClose, onCommand, language = "en" }) => {
       formData.append("audio", audioBlob, "recording.webm");
       formData.append("language", language);
 
-      const response = await fetch("http://localhost:3000/api/whisper", {
+      const response = await fetch("https://ysbackend.onrender.com/api/whisper", {
         method: "POST",
         body: formData,
       });
