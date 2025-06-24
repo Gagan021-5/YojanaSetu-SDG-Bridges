@@ -236,7 +236,6 @@ const GovernmentSchemesApp = () => {
       ? mockSchemes
       : mockSchemes.filter((scheme) => scheme.category === selectedCategory);
 
-  // InView hook for scroll animations
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -431,32 +430,36 @@ const GovernmentSchemesApp = () => {
             ref={ref}
           >
             <motion.div
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 relative overflow-hidden"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8 relative overflow-hidden"
               variants={fadeIn}
               whileHover={{ scale: 1.005 }}
             >
               <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-blue-100 dark:bg-blue-900 opacity-20"></div>
-              <div className="relative flex items-center gap-2">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-5 h-5" />
 
+              <div className="relative flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-2">
+                {/* Search Icon */}
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-300 w-5 h-5 pointer-events-none" />
+
+                {/* Input Field */}
                 <input
                   type="text"
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                   placeholder={t.searchPlaceholder}
-                  className="flex-1 pl-12 py-4 pr-4 border border-gray-300 dark:border-gray-600 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 shadow-sm transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                  className="flex-1 w-full pl-12 py-4 pr-4 border border-gray-300 dark:border-gray-600 rounded-lg text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 shadow-sm transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                   onKeyPress={(e) =>
                     e.key === "Enter" && setCurrentPage("schemes")
                   }
                 />
 
+                {/* Mic Button */}
                 <motion.button
                   type="button"
                   onClick={() => {
                     setVoiceContext("search");
                     setShowVoiceAssistant(true);
                   }}
-                  className="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 p-3 rounded-full hover:bg-blue-100 dark:hover:bg-blue-700 transition-colors flex items-center justify-center"
+                  className="w-12 h-12 flex-shrink-0 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-full hover:bg-blue-100 dark:hover:bg-blue-700 transition-colors flex items-center justify-center"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label="Speak your query"
@@ -464,44 +467,6 @@ const GovernmentSchemesApp = () => {
                   <FiMic className="w-5 h-5" />
                 </motion.button>
               </div>
-
-              <motion.div
-                className="grid md:grid-cols-3 gap-4 mt-6"
-                variants={staggerContainer}
-              >
-                <motion.button
-                  onClick={() => setCurrentPage("schemes")}
-                  className="flex items-center justify-center space-x-2 bg-blue-600 dark:bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors"
-                  variants={fadeIn}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  <Search className="w-5 h-5" />
-                  <span>{t.schemes}</span>
-                </motion.button>
-
-                <motion.button
-                  onClick={() => setCurrentPage("centers")}
-                  className="flex items-center justify-center space-x-2 bg-green-600 dark:bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-700 dark:hover:bg-green-800 transition-colors"
-                  variants={fadeIn}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  <MapPin className="w-5 h-5" />
-                  <span>{t.findCenter}</span>
-                </motion.button>
-
-                <motion.button
-                  onClick={() => setCurrentPage("chat")}
-                  className="flex items-center justify-center space-x-2 bg-purple-600 dark:bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-700 dark:hover:bg-purple-800 transition-colors"
-                  variants={fadeIn}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>{t.chatbot}</span>
-                </motion.button>
-              </motion.div>
             </motion.div>
 
             <motion.div
