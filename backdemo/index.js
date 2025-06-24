@@ -4,7 +4,6 @@ import "dotenv/config";
 import cors from "cors";
 const PORT = process.env.PORT || 6000;
 
-const cors = require("cors");
 
 const allowedOrigins = [
   "http://localhost:5173",
