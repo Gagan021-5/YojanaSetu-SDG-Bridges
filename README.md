@@ -55,6 +55,9 @@ yojanasetu/
 │ ├── index.js # Main Express server
 │ ├── requirements.txt # Python dependencies
 │ └── .env # Environment config
+
+<br>
+
 │
 ├── frontend/ # React frontend
 │ ├── public/ # Static assets
@@ -144,6 +147,10 @@ Mobile-friendly frontend
 
 ## 👥 Team
 Gagan  – Backend Development + Whisper Python Integration
+<br>
 Aashi Goel - Frontend Develpment & Integration Frontend and Backend
+<br>
 Aman - UI/UX Design
+<br>
 Disha Prajapati - UI/UX Design 
+<br>
