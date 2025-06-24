@@ -4,14 +4,10 @@ import "dotenv/config";
 import cors from "cors";
 const PORT = process.env.PORT || 6000; 
 
-const allowedOrigins = [
-  'http://localhost:5173', // local 
-  'https://ysfrontend.onrender.com' // deployed 
-];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin:  'http://localhost:5173',
     credentials: true, 
   })
 );
