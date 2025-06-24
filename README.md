@@ -152,5 +152,5 @@ Aashi Goel - Frontend Develpment & Integration Frontend and Backend
 <br>
 Aman - UI/UX Design
 <br>
-Disha Prajapati - UI/UX Design 
+Disha - UI/UX Design 
 <br>
