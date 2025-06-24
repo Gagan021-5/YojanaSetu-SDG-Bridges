@@ -1,16 +1,14 @@
 {
   "name": "ysbackend",
   "version": "1.0.0",
-  "description": "",
+  "description": "YojanaSetu Backend",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "module",
+  "scripts": {
+    "start": "node index.js",             
+    "dev": "nodemon index.js",
+    "postinstall": "pip install -r requirements.txt" 
+  },
   "dependencies": {
     "axios": "^1.10.0",
     "body-parser": "^2.2.0",
