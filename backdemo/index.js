@@ -2,12 +2,17 @@ import express from "express";
 const app = express();
 import "dotenv/config";
 import cors from "cors";
-const PORT = process.env.PORT || 6000; // Fallback port
- // Add this
+const PORT = process.env.PORT || 6000; 
+
+const allowedOrigins = [
+  'http://localhost:5173', // local 
+  'https://ysfrontend.onrender.com' // deployed 
+];
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
+    credentials: true, 
   })
 );
 app.use(express.json());
